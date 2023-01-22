@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import useRequestedData from "../hooks/useRequestedData";
-import { goToDetailsPage } from "../Router/coordinator";
+import { goToDetailsPage } from "../router/coordinator";
 
 const FeedCards = ({ text }) => {
   const navigate = useNavigate();

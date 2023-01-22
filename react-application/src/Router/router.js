@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import ClientsPage from "../Pages/clientsPage";
-import ClientDetails from "../Pages/clientDetailsPage";
+import ClientsPage from "../pages/clientsPage";
+import ClientDetails from "../pages/clientDetailsPage";
 
 const Router = () => {
   return (
