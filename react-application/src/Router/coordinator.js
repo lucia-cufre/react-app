@@ -1,7 +1,7 @@
-export const goToMoviesPage = (navigate) => {
+export const goToClientsPage = (navigate) => {
   navigate("/");
 };
 
-export const goToDetailsPage = (navigate, id) => {
-  navigate(`/movie/${id}`);
+export const goToDetailsPage = (navigate, email) => {
+  navigate(`/client/${email}`);
 };

@@ -1,8 +1,8 @@
 import FeedCards from "../components/feedCard";
 import useForm from "../hooks/useForm";
-import HeaderComponent from "../components/appBar";
+import HeaderComponent from "../components/appBarFeed";
 import { List } from "@mui/material";
-const MoviesPage = () => {
+const ClientsPage = () => {
   const { form, onChange } = useForm({
     search: "",
   });
@@ -17,4 +17,4 @@ const MoviesPage = () => {
   );
 };
 
-export default MoviesPage;
+export default ClientsPage;

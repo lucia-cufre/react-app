@@ -1,2 +1,2 @@
- const BASE_URL = "https://imdb-api.com/en/API/MostPopularMovies/k_2gxa9ifw"
+ const BASE_URL = "https://randomuser.me/api/?page=3&results=50&seed=abc"
 export default BASE_URL

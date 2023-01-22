@@ -4,19 +4,18 @@ import InputBase from "@mui/material/InputBase";
 import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
+  '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginRight: theme.spacing(2),
   marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(1),
+    width: 'auto',
   },
 }));
 
@@ -46,23 +45,26 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const HeaderComponent = ({value, onChange}) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{  flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{ flexGrow: 1, display:"flex"}}>
+          <div>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ flexGrow: 1, marginRight:"1vh"}}
           >
-            Best Movies List
+            Clients List
           </Typography>
+          </div>
+          <div>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search by movie title"
+              placeholder="Search by client name"
               name="search"
               type="text"
               value={value}
@@ -70,6 +72,7 @@ const HeaderComponent = ({value, onChange}) => {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          </div>
         </Toolbar>
       </AppBar>
     </Box>

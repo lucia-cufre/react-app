@@ -1,6 +1,8 @@
 import {
   Avatar,
+  Box,
   Button,
+  CircularProgress,
   Divider,
   ListItem,
   ListItemAvatar,
@@ -18,27 +20,29 @@ const FeedCards = ({ text }) => {
   return (
     <>
       {isLoading ? (
-        <p>Carregando..</p>
+       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '40vh'}}>
+        <CircularProgress/>
+        </Box>
       ) : (
-        data?.items
-          ?.filter((movies) => {
-            return movies.title.toLowerCase().includes(search.toLowerCase());
+        data?.results
+          ?.filter((clients) => {
+            return clients.name.first.toLowerCase().includes(search.toLowerCase()) || clients.name.last.toLowerCase().includes(search.toLowerCase());
           })
-          .map((movie) => (
-            <div key={movie.id}>
+          .map((client) => (
+            <div key={client.id}>
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                   <Avatar
-                    alt={movie.fullTitle}
-                    src={movie.image}
+                    alt={client.name.first}
+                    src={client.picture.medium}
                     sx={{ width: 100, height: 100 }}
                   />
                 </ListItemAvatar>
-                <ListItemText primary={movie.title} dense sx={{ margin: 5 }} />
+                <ListItemText primary={client.name.first + " " + client.name.last} dense sx={{ margin: 5 }} />
                 <Button
                   variant="contained"
                   sx={{ marginTop: 4 }}
-                  onClick={() => goToDetailsPage(navigate, movie.id)}
+                  onClick={() => goToDetailsPage(navigate, client.email)}
                 >
                   Details
                 </Button>

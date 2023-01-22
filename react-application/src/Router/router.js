@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import MoviesPage from "../Pages/moviesPage";
-import MovieDetails from "../Pages/movieDetailsPage";
+import ClientsPage from "../Pages/clientsPage";
+import ClientDetails from "../Pages/clientDetailsPage";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MoviesPage />} />
-        <Route path={"/movie/:id"} element={<MovieDetails />} />
+        <Route path="/" element={<ClientsPage />} />
+        <Route path={"/client/:email"} element={<ClientDetails />} />
       </Routes>
     </BrowserRouter>
   );
